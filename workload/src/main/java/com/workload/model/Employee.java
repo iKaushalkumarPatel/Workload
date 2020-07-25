@@ -1,5 +1,15 @@
 package com.workload.model;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@EntityScan
+@Table(name="EMPLOYEE")
 public class Employee {
 
     public Long getEmployeeId() {
@@ -51,11 +61,20 @@ public class Employee {
 		this.contact = contact;
 	}
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long employeeId;
+    
+	@Column(name="firstName")	
     private String firstName;
+	
+	@Column(name="lastName")
     private String lastName;
+	
+	@Column(name="email", nullable=false, length=200)
     private String email;
+	
+	@Column(name="contact")
 	private String contact;
     
 

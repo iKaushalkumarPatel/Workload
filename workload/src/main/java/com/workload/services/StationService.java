@@ -34,7 +34,7 @@ public class StationService {
         if(station.isPresent()) {
             return station.get();
         } else {
-            throw new RecordNotFoundException();
+            throw new RecordNotFoundException(null);
         }
     }
      
@@ -65,7 +65,17 @@ public class StationService {
         {
             repository.deleteById(id);
         } else {
-            throw new RecordNotFoundException();
+            throw new RecordNotFoundException(null);
         }
     }
+
+	public List<Station> getAllStation() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Station getStationByCode(Long stationCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -2,11 +2,18 @@ package com.workload.repository;
 
 import java.util.List;
 import java.util.Optional;
-
-import com.workload.model.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import com.workload.model.Station;
+import com.workload.model.Employee;
 
-public class StationRepository {
+@Repository
+public interface StationRepository
+        extends JpaRepository<Station, Long> {
+ 
+}
+
+/*public class StationRepository {
 
 	public List<Station> getAllStation() {
 		// TODO Auto-generated method stub
@@ -49,3 +56,4 @@ public class StationRepository {
 	}
 
 }
+*/

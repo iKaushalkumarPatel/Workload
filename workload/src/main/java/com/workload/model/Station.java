@@ -1,5 +1,16 @@
 package com.workload.model;
 
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@EntityScan
+@Table(name="STATION")
 public class Station {
 
 	public Long getStationCode() {
@@ -14,7 +25,12 @@ public class Station {
 	public void setStationName(String stationName) {
 		StationName = stationName;
 	}
+	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long StationCode;
+    
+    @Column(name="StationName")
     private String StationName;
 
     
