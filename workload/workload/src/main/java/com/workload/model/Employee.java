@@ -5,29 +5,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @Getter
 @Setter
 @ToString 
-@Table(name = "Products")
+@Table(name = "EMPLOYEE")
 @Entity
-public class Product {
-	
+public class Employee {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id; 
-	private String productCode;
-	private String productDescription;
-	private boolean topping1;
-	private boolean topping2;
-	private boolean topping3;
-	private double price;
-	
- 
+	private Long employeeId;
+    private String firstName;
+    private String lastName;
+    private String email;
+	private String contact;
 }
