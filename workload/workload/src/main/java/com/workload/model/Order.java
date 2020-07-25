@@ -11,8 +11,6 @@ public class Order {
 	private Product product;
 	private Customer customer;
 	
-	
-	
 	public Order(String orderNumber, String orderDescription, int quantiy, String status) {
 		super();
 		this.orderNumber = orderNumber;
