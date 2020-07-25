@@ -8,7 +8,6 @@ public class Customer {
 	private String email;
 	private String phone;
 	
-	
 	public Customer(String customerId, String firstName, String fastName, String email, String phone) {
 		super();
 		this.customerId = customerId;
