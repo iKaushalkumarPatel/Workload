@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workload.model.Orders;
+import com.workload.model.Order;
 import com.workload.model.Product;
 import com.workload.repository.OrderRepository;
 
@@ -27,7 +27,7 @@ public class OrderController {
 		private OrderRepository orderRepository;
 
 		@PostMapping("/order")
-		public ResponseEntity<String> addOrder(@RequestBody Orders order) {
+		public ResponseEntity<String> addOrder(@RequestBody Order order) {
 			HttpHeaders responseHeaders = getRestHeader();
 			try {
 				orderRepository.save(order);
