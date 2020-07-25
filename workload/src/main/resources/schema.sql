@@ -12,5 +12,5 @@ DROP TABLE IF EXISTS STATION;
  
 CREATE TABLE STATION(
 stationCode varchar(15),
-stationName varchar(15) NOT NULL,
+stationName varchar(15) NOT NULL
 );

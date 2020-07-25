@@ -2,16 +2,22 @@ package com.workload.model;
 
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-@EntityScan
+@Entity
 @Table(name="STATION")
 public class Station {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)	
+	private Long StationCode;
+    
+    @Column(name="StationName")
+    private String StationName;
 
 	public Long getStationCode() {
 		return StationCode;
@@ -26,12 +32,6 @@ public class Station {
 		StationName = stationName;
 	}
 	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private Long StationCode;
-    
-    @Column(name="StationName")
-    private String StationName;
 
     
     @Override
