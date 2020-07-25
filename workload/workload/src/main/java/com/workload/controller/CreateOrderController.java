@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.workload.model.Order;
 import com.workload.repository.OrderRepository;
-import com.workload.service.WorkloadService;
+
 
 @RestController
-public class CreateOrder {
+public class CreateOrderController {
 
 	@Autowired
-	private WorkloadService workloadService;
+	private OrderRepository orderRepository;
 
 	@PostMapping("/createorder")
 	public Order createOrder(@RequestBody Order order) {
-		return workloadService.save(order);
+		return orderRepository.save(order);
 	}
 
 	

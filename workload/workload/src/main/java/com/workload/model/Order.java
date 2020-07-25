@@ -1,5 +1,7 @@
 package com.workload.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +9,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="order")
-public class Order {
+@Table(name="Orders")
+public class Order implements Serializable {
 
 
-    @Id
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue
 	@Column(name="orderNumber", nullable = false)
 	private String orderNumber;
@@ -25,11 +32,11 @@ public class Order {
 	@Column(name="status", nullable = false)
 	private String status;
 	
-	@Column(name="product", nullable = false)
-	private Product product;
+	//@Column(name="product", nullable = false)
+	//private Product product;
 	
-	@Column(name="customer", nullable = false)
-	private Customer customer;
+	//@Column(name="customer", nullable = false)
+	//private Customer customer;
 	
 	public Order(String orderNumber, String orderDescription, int quantiy, String status) {
 		super();
