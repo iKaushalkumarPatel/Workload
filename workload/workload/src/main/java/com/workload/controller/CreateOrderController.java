@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.workload.exception.OrderNotFoundException;
 import com.workload.model.Order;
 import com.workload.repository.OrderRepository;
+import com.workload.service.WorkloadService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,14 +17,14 @@ import org.slf4j.LoggerFactory;
 public class CreateOrderController {
 
 	@Autowired
-	private OrderRepository orderRepository;
+	private WorkloadService workloadService;
 	Logger logger = LoggerFactory.getLogger(CreateOrderController.class);
 
 	@PostMapping("/createorder")
 	public Order createOrder(@RequestBody Order order) {
 		if (order==null)
 		      throw new OrderNotFoundException("order-" + order);
-		return orderRepository.save(order);
+		return workloadService.save(order);
 	}
 
 	

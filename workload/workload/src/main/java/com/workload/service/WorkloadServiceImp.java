@@ -5,14 +5,11 @@ import org.springframework.stereotype.Service;
 
 import com.workload.model.Order;
 import com.workload.repository.OrderRepository;
-
 @Service
 public class WorkloadServiceImp implements WorkloadService {
-
 	@Autowired
 	private OrderRepository orderRepository;
 
-	@Override
 	public Order save(Order order) {
 		Order orderdetail = new Order(order.getOrderNumber(), order.getOrderDescription(), order.getQuantiy(), order.getStatus());
 		if(orderdetail!=null) {
@@ -26,5 +23,4 @@ public class WorkloadServiceImp implements WorkloadService {
 		
 		return orderdetail;
 	}
-
 }
